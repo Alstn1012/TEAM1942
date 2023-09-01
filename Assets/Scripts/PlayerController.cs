@@ -27,7 +27,6 @@ public class PlayerController : MonoBehaviour
     void Move()
     {
         float Horizontal = Input.GetAxis("Horizontal");
-
         float Vertical = Input.GetAxis("Vertical");
         Vector2 direction2 = new Vector2(Horizontal, Vertical);
         rigid.velocity = direction2 * speed * Time.deltaTime;
