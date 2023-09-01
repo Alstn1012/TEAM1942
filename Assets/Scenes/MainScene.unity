@@ -364,7 +364,7 @@ MonoBehaviour:
   player: {fileID: 140864484}
   poolManager: {fileID: 1135029175}
   enemyObjs:
-  - {fileID: 0}
+  - {fileID: 6921337981368476076, guid: 0b495387aab4c704aa2ab01aa190248d, type: 3}
   spawnPoints:
   - {fileID: 407860087}
   - {fileID: 2123468355}
@@ -894,7 +894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78aaa0b18329504488ac433b7eccded3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 3
+  maxHP: 30
   currentHP: 0
   hpText: {fileID: 0}
   hearts: []
