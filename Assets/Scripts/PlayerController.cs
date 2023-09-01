@@ -29,12 +29,11 @@ public class PlayerController : MonoBehaviour
         float Horizontal = Input.GetAxis("Horizontal");
         float Vertical = Input.GetAxis("Vertical");
         Vector2 direction2 = new Vector2(Horizontal, Vertical);
-        rigid.velocity = direction2 * speed * Time.deltaTime;
+        rigid.velocity = direction2 * speed;
     }
 
     public void Init()
     {
-        speed = 6f;
         hp = hpManager.maxHP; // HPManager의 maxHP를 가져와서 초기화
     }
 
