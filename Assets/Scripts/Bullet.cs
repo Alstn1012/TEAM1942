@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     public float speed;
 
-    private GameManager gameManager;
+    public GameManager gameManager;
 
     private Vector3 targetPosition;
     private Vector3 initialPosition;
