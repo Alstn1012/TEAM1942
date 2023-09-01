@@ -32,11 +32,11 @@ public class GameManager : MonoBehaviour
 
     void SpawnEnemy()
     {
-        int ranEnemy = Random.Range(0, 3);
-        int ranPoint = Random.Range(0, 5);
+        int ranEnemy = Random.Range(0, 1);
+        int ranPoint = Random.Range(0, 4);
         Instantiate(enemyObjs[ranEnemy],
-                    spawnPoints[ranPoint].position,
-                    spawnPoints[ranPoint].rotation);
+                    spawnPoints[ranPoint].transform.position,
+                    spawnPoints[ranPoint].transform.rotation);
     }
 
     private void Awake()
