@@ -27,12 +27,10 @@ public class PlayerController : MonoBehaviour
     void Move()
     {
         float Horizontal = Input.GetAxis("Horizontal");
-        Vector2 direction1 = new Vector2(Horizontal, 0);
-        transform.position = (Vector2)transform.position + direction1 * speed * Time.deltaTime;
 
         float Vertical = Input.GetAxis("Vertical");
-        Vector2 direction2 = new Vector2(0, Vertical);
-        transform.position = (Vector2)transform.position + direction2 * speed * Time.deltaTime;
+        Vector2 direction2 = new Vector2(Horizontal, Vertical);
+        rigid.velocity = direction2 * speed * Time.deltaTime;
     }
 
     public void Init()
