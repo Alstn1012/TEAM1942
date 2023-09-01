@@ -37,7 +37,7 @@ public class HPManager : MonoBehaviour
         return currentHP;
     }
 
-    private void UpdateHPText()
+    public void UpdateHPText()
     {
         if (hpText != null)
         {

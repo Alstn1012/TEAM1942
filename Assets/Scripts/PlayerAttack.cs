@@ -20,7 +20,7 @@ public class PlayerAttack : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 Instantiate(pre_bullet, transform.position, gameObject.transform.rotation,
-                    MoonGameManager.instance.poolManager.bulletpool);
+                    GameManager.instance.poolManager.bulletpool);
                 curtime = cooltime;
             }
         }
