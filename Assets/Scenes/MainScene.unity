@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  player: {fileID: 0}
+  player: {fileID: 140864489}
   hp: 100
   hpManager: {fileID: 727080569}
 --- !u!114 &140864490
