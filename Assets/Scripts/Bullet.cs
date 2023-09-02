@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
 
     public GameManager gameManager;
 
+
     private Vector3 targetPosition;
     private Vector3 initialPosition;
 
@@ -49,6 +50,7 @@ public class Bullet : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            Debug.Log("Enemy destroyed at " + Time.time);
             gameManager.score += 100;
         }
     }
