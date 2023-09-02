@@ -6,9 +6,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
+    public PlayerController player;
 
     [Header("Player 세팅")]
-    public int hp;
+    public int hp = 100;
     public HPManager hpManager; // HPManager 스크립트 참조
 
     Rigidbody2D rigid;

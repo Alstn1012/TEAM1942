@@ -5,4 +5,5 @@ using UnityEngine;
 public class PoolManager : MonoBehaviour
 {
     public Transform bulletpool;
+    public Transform enemypool;
 }
