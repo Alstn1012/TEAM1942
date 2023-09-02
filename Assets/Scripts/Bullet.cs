@@ -34,6 +34,15 @@ public class Bullet : MonoBehaviour
         }
     }
 
+    public void SetTarget(Vector3 target)
+    {
+        targetPosition = target;
+        targetPosition.z = transform.position.z;
+
+        Vector3 direction = (targetPosition - initialPosition).normalized;
+        transform.up = direction; // Make the bullet face the target direction
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))

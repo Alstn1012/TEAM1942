@@ -6,11 +6,13 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject player;
-    PlayerController player_scr;//플레이어 스크립트 가져옴
-    public static GameManager instance;
-    public PoolManager poolManager;
-
     public GameObject[] enemyObjs;
+
+    PlayerController player_scr;//플레이어 스크립트 가져옴
+   
+    public PoolManager poolManager;
+    public static GameManager instance;
+    
     public Transform[] spawnPoints;
 
     public float maxSpawnDelay;
