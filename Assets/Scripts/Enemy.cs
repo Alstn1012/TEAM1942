@@ -25,7 +25,8 @@ public class Enemy : MonoBehaviour
 
     void Move()
     {
-        Vector3 dir = pl.transform.position - transform.position;
+        Vector3 dir = (pl.transform.position - transform.position).normalized;
         rigid.velocity = dir * speed;
     }
+
 }
