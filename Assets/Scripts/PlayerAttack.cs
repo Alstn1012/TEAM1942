@@ -17,7 +17,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (curtime <= 0)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetMouseButton(0))
             {
                 Instantiate(pre_bullet, transform.position, gameObject.transform.rotation,
                     GameManager.instance.poolManager.bulletpool);
