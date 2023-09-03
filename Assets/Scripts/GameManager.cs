@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Tilemaps;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,14 +22,23 @@ public class GameManager : MonoBehaviour
 
     public int score = 0;
 
+    public Text scoreText;
+
+
+    private void Start()
+    {
+        
+    }
+
     void Update()
     {
+        scoreText.text = "SCORE : " + GameManager.instance.score.ToString();
         curSpawnDelay += Time.deltaTime;
 
         if (curSpawnDelay > maxSpawnDelay)
         {
             SpawnEnemy();
-            maxSpawnDelay = Random.Range(0.5f, 2f);
+            maxSpawnDelay = Random.Range(0.5f, 1f);
             curSpawnDelay = 0;
         }
     }
@@ -45,10 +56,5 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         player_scr = player.GetComponent<PlayerController>();//플레이어 스크립트 가져옴
-    }
-
-    private void Start()
-    {
-
     }
 }
