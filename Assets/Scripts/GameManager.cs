@@ -49,6 +49,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        player_scr.Init();
+
     }
 }
