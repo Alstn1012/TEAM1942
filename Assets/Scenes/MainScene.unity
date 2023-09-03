@@ -447,6 +447,7 @@ MonoBehaviour:
   maxSpawnDelay: 0
   curSpawnDelay: 0
   score: 0
+  scoreText: {fileID: 238987834}
 --- !u!1 &238987832
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,6 +572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 238987834}
+  hearts: []
 --- !u!1 &274270185
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,10 +1120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78aaa0b18329504488ac433b7eccded3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hearts:
-  - {fileID: 585902208}
-  - {fileID: 274270185}
-  - {fileID: 105322242}
 --- !u!1 &829947655
 GameObject:
   m_ObjectHideFlags: 0
