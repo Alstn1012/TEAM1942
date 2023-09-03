@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         if (curSpawnDelay > maxSpawnDelay)
         {
             SpawnEnemy();
-            maxSpawnDelay = Random.Range(0.5f, 3f);
+            maxSpawnDelay = Random.Range(0.5f, 2f);
             curSpawnDelay = 0;
         }
     }
