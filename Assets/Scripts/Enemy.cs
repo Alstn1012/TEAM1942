@@ -16,7 +16,6 @@ public class Enemy : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody2D>();
         pl = GameObject.FindGameObjectWithTag("Player");
-        Debug.Log("Enemy spawned at " + Time.time);
     }
 
     void Update()
