@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
     public Text scoreText;
 
 
+
     private void Start()
     {
         instance = this;
@@ -41,6 +43,16 @@ public class GameManager : MonoBehaviour
             maxSpawnDelay = Random.Range(0.5f, 1f);
             curSpawnDelay = 0;
         }
+
+        if (score >= 4000)
+        {
+            ClearScene();
+        }
+    }
+
+    void ClearScene()
+    {
+        SceneManager.LoadScene("ClearScene");
     }
 
     void SpawnEnemy()
