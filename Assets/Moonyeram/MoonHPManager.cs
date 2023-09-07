@@ -22,13 +22,18 @@ public class MoonHPManager : MonoBehaviour
         currentHP -= damageAmount;
         UpdateHPText();
 
-        // HP가 감소할 때마다 Heart 오브젝트를 숨김
         for (int i = 0; i < hearts.Length; i++)
+        {
+            hearts[i].SetActive(false);
+        }
+        for (int i = 0; i < currentHP; i++)
         {
             if (i >= currentHP)
             {
                 hearts[i].SetActive(false);
             }
+            hearts[i].SetActive(true);
+
         }
     }
 
