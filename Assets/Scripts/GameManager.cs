@@ -55,6 +55,8 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("ClearScene");
     }
 
+    
+
     void SpawnEnemy()
     {
         int ranEnemy = Random.Range(0, 1);
