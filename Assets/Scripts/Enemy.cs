@@ -6,6 +6,10 @@ using static UnityEngine.GraphicsBuffer;
 public class Enemy : MonoBehaviour
 {
     public PlayerController Player;
+<<<<<<< Updated upstream
+=======
+    public MoonHPManager HPManager;
+>>>>>>> Stashed changes
 
     public float speed = 3f;
 
@@ -18,7 +22,10 @@ public class Enemy : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         pl = GameObject.FindGameObjectWithTag("Player");
         HPManager = FindObjectOfType<MoonHPManager>();
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     }
 
     void Update()
@@ -43,7 +50,11 @@ public class Enemy : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+<<<<<<< Updated upstream
             Destroy(gameObject);
+=======
+            Destroy(gameObject); // 자신을 제거
+>>>>>>> Stashed changes
             HPManager.TakeDamage(1);
         }
     }

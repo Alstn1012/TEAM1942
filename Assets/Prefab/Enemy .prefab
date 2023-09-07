@@ -172,5 +172,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
+  HPManager: {fileID: 0}
   speed: 5
   HPManager: {fileID: 0}

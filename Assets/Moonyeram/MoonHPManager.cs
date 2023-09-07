@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,20 +11,32 @@ public class MoonHPManager : MonoBehaviour
 
     public Text hpText; // 화면에 표시할 텍스트
     public GameObject[] hearts; // Heart 오브젝트 배열
-
+    
     public void Start()
     {
         currentHP = maxHP;
         UpdateHPText();
+        Debug.Log(hearts.Length);
+        
     }
 
     public void TakeDamage(int damageAmount)
     {
+        print(currentHP);
         currentHP -= damageAmount;
         UpdateHPText();
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         for (int i = 0; i < hearts.Length; i++)
+        { 
+            hearts[i].SetActive(false);
+        }
+        // HP가 감소할 때마다 Heart 오브젝트를 숨김
+        for (int i = 0; i < currentHP; i++)
         {
+<<<<<<< Updated upstream
             hearts[i].SetActive(false);
         }
         for (int i = 0; i < currentHP; i++)
@@ -34,6 +47,10 @@ public class MoonHPManager : MonoBehaviour
             }
             hearts[i].SetActive(true);
 
+=======
+               hearts[i].SetActive(true);
+            
+>>>>>>> Stashed changes
         }
     }
 
