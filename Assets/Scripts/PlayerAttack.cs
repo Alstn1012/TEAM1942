@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour
     public GameObject pre_bullet;
     [SerializeField] float curtime;
     public float cooltime;
+    public GameManager gameManager;
 
     void Update()
     {
