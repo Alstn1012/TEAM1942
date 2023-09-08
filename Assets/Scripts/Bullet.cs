@@ -5,39 +5,45 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed;
-
     public GameManager gameManager;
 
-
-    private Vector3 targetPosition;
     private Vector3 initialPosition;
 
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
 
-        Destroy(gameObject, 5);
         initialPosition = transform.position;
-        targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         targetPosition.z = transform.position.z;
 
         Vector3 direction = (targetPosition - initialPosition).normalized;
         transform.up = direction; // Make the bullet face the target direction
     }
 
-    private void Update() // Use Update instead of FixedUpdate for better collision accuracy
+    private void Update()
     {
         transform.Translate(Vector3.up * speed * Time.deltaTime);
 
-        if (Vector3.Distance(initialPosition, transform.position) >= Vector3.Distance(initialPosition, targetPosition))
+        if (IsOutsideScreen())
         {
             Destroy(gameObject);
         }
     }
 
+    private bool IsOutsideScreen()
+    {
+        Vector3 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
+        if (screenPosition.x < 0 || screenPosition.x > Screen.width || screenPosition.y < 0 || screenPosition.y > Screen.height)
+        {
+            return true;
+        }
+        return false;
+    }
+
     public void SetTarget(Vector3 target)
     {
-        targetPosition = target;
+        Vector3 targetPosition = target;
         targetPosition.z = transform.position.z;
 
         Vector3 direction = (targetPosition - initialPosition).normalized;
