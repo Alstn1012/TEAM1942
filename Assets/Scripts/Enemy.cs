@@ -7,11 +7,13 @@ public class Enemy : MonoBehaviour
 {
     public PlayerController Player;
 
+    public MoonHPManager HPManager;
+
+
     public float speed = 3f;
 
     Rigidbody2D rigid;
     GameObject pl;
-    public MoonHPManager HPManager;
 
     void Start()
     {
@@ -43,7 +45,11 @@ public class Enemy : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+
             Destroy(gameObject);
+
+            Destroy(gameObject); // 자신을 제거
+
             HPManager.TakeDamage(1);
         }
     }
