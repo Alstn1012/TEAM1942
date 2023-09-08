@@ -22,7 +22,7 @@ public class PlayerAttack : MonoBehaviour
         {
             if (Input.GetMouseButton(0))
             {
-                poolManager.UsePool("bullet");
+                poolManager.UsePool(0, this.transform.position, this.transform.rotation);
                 curtime = cooltime;
             }
         }

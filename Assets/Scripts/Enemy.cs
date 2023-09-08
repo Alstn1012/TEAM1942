@@ -45,11 +45,7 @@ public class Enemy : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-
-            Destroy(gameObject);
-
-            Destroy(gameObject); // 자신을 제거
-
+            gameObject.SetActive(false);
             HPManager.TakeDamage(1);
         }
     }

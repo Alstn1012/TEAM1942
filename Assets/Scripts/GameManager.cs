@@ -61,9 +61,8 @@ public class GameManager : MonoBehaviour
     {
         int ranEnemy = Random.Range(0, 1);
         int ranPoint = Random.Range(0, 4);
-        Instantiate(enemyObjs[ranEnemy],
-                    spawnPoints[ranPoint].transform.position,
-                    spawnPoints[ranPoint].transform.rotation);
+        poolManager.UsePool(1 + ranEnemy, spawnPoints[ranPoint].position, spawnPoints[ranPoint].rotation);
+
     }
 
     private void Awake()
