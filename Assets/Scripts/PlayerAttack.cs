@@ -9,6 +9,8 @@ public class PlayerAttack : MonoBehaviour
     public float cooltime;
     public GameManager gameManager;
 
+    public PoolManager poolManager;
+
     void Update()
     {
         Attack();
@@ -20,8 +22,7 @@ public class PlayerAttack : MonoBehaviour
         {
             if (Input.GetMouseButton(0))
             {
-                Instantiate(pre_bullet, transform.position, gameObject.transform.rotation,
-                    GameManager.instance.poolManager.bulletpool);
+                poolManager.UsePool("bullet");
                 curtime = cooltime;
             }
         }

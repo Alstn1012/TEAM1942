@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
 {
     public PlayerController Player;
 
-    public MoonHPManager HPManager;
+    public HPManager HPManager;
 
 
     public float speed = 3f;
@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody2D>();
         pl = GameObject.FindGameObjectWithTag("Player");
-        HPManager = FindObjectOfType<MoonHPManager>();
+        HPManager = FindObjectOfType<HPManager>();
 
     }
 

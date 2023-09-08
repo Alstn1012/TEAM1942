@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MoonHPManager : MonoBehaviour
+public class HPManager : MonoBehaviour
 {
     public int maxHP = 3; // 최대 체력
     public int currentHP; // 현재 체력

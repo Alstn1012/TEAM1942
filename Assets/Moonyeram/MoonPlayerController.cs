@@ -9,7 +9,7 @@ public class MoonPlayerController : MonoBehaviour
 
     [Header("Player 세팅")]
     public int hp;
-    public MoonHPManager hpManager; // HPManager 스크립트 참조
+    public HPManager hpManager; // HPManager 스크립트 참조
 
     Rigidbody2D rigid;
 

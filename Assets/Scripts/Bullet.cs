@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour
 
         if (IsOutsideScreen())
         {
-            Destroy(gameObject);
+            this.gameObject.SetActive(false);
         }
     }
 
@@ -55,7 +55,7 @@ public class Bullet : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             Destroy(collision.gameObject);
-            Destroy(gameObject);
+            this.gameObject.SetActive(false);
             gameManager.score += 100;
         }
     }
