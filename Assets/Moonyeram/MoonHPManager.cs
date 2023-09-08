@@ -25,10 +25,7 @@ public class MoonHPManager : MonoBehaviour
         print(currentHP);
         currentHP -= damageAmount;
         UpdateHPText();
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
         for (int i = 0; i < hearts.Length; i++)
         { 
             hearts[i].SetActive(false);
@@ -36,7 +33,6 @@ public class MoonHPManager : MonoBehaviour
         // HP가 감소할 때마다 Heart 오브젝트를 숨김
         for (int i = 0; i < currentHP; i++)
         {
-<<<<<<< Updated upstream
             hearts[i].SetActive(false);
         }
         for (int i = 0; i < currentHP; i++)
@@ -47,10 +43,7 @@ public class MoonHPManager : MonoBehaviour
             }
             hearts[i].SetActive(true);
 
-=======
                hearts[i].SetActive(true);
-            
->>>>>>> Stashed changes
         }
     }
 
