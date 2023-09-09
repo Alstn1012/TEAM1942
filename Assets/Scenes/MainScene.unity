@@ -430,7 +430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e92782d1a5bec954bb75d62de1321d45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pre_bullet: {fileID: 4119983693847190785, guid: 483daea74fa053b47a38d9c0566e9940, type: 3}
+  pre_bullet: {fileID: 6237255178298118016, guid: a2d84f7c25ba36c49a197b7f299e1790, type: 3}
   curtime: 0
   cooltime: 0.2
   gameManager: {fileID: 1300957231}
@@ -1435,7 +1435,7 @@ MonoBehaviour:
   pools:
   - {fileID: 1959923222}
   - {fileID: 31976323}
-  bullet: {fileID: 4119983693847190785, guid: 483daea74fa053b47a38d9c0566e9940, type: 3}
+  bullet: {fileID: 6237255178298118016, guid: a2d84f7c25ba36c49a197b7f299e1790, type: 3}
   player: {fileID: 140864484}
 --- !u!4 &748979963
 Transform:
@@ -2311,7 +2311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7924d61fde4aa4a90d597d5174b5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 4119983693847190785, guid: 483daea74fa053b47a38d9c0566e9940, type: 3}
+  prefab: {fileID: 6237255178298118016, guid: a2d84f7c25ba36c49a197b7f299e1790, type: 3}
   key: bullet
 --- !u!1 &2066609576
 GameObject:
