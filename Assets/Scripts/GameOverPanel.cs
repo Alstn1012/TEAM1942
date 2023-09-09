@@ -10,6 +10,7 @@ public class GameOverPanel : MonoBehaviour
 
     public void Show()
     {
+        
         int score = GameManager.instance.score; // ScoreText로 부터 현재 기록된 점수를 불러온다.
         transform.gameObject.SetActive(true); // GameOver 팝업 창을 화면에 표시 시키고
         Text_GameResult.text = "Score : " + score.ToString(); // 팝업의 점수 창에 현재 점수를 표시한다.
