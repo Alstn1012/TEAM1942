@@ -1232,6 +1232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Text_GameResult: {fileID: 939804039}
   Text_GameMaxResult: {fileID: 1765617142}
+  highScore: 0
 --- !u!114 &696594139
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameOverPanel : MonoBehaviour
 {
@@ -11,11 +11,11 @@ public class GameOverPanel : MonoBehaviour
     public Text Text_GameMaxResult;
 
     private string KeyName = "bestScore";
-    public int highScore = 0;
+    public int highScore;
 
     void Awake()
     {
-        highScore = PlayerPrefs.GetInt(KeyName, 0);
+        highScore = PlayerPrefs.GetInt(KeyName, GameManager.instance.score);
         Text_GameMaxResult.text = $"HIGH SCORE : {highScore.ToString()}";
     }
 
