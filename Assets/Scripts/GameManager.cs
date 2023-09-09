@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,19 +9,17 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public GameObject[] enemyObjs;
 
-    PlayerController player_scr;//플레이어 스크립트 가져옴
-   
+    PlayerController player_scr;
+
     public PoolManager poolManager;
     public static GameManager instance;
-    
+
     public Transform[] spawnPoints;
 
     public float maxSpawnDelay;
     public float curSpawnDelay;
 
     public int score = 0;
-
-    public Text scoreText;
 
     public static bool isGameEnd = false;
 
@@ -36,7 +32,6 @@ public class GameManager : MonoBehaviour
     {
         if (!GameManager.isGameEnd)
         {
-            scoreText.text = "SCORE : " + GameManager.instance.score.ToString();
             curSpawnDelay += Time.deltaTime;
 
             if (curSpawnDelay > maxSpawnDelay)
@@ -51,7 +46,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (score >= 7000)
+        if (score >= 4000)
         {
             SceneManager.LoadScene("ClearScene");
         }
@@ -62,12 +57,12 @@ public class GameManager : MonoBehaviour
         int ranEnemy = Random.Range(0, 1);
         int ranPoint = Random.Range(0, 4);
         poolManager.UsePool(1 + ranEnemy, spawnPoints[ranPoint].position, spawnPoints[ranPoint].rotation);
-
     }
 
     private void Awake()
     {
         instance = this;
-        player_scr = player.GetComponent<PlayerController>();//플레이어 스크립트 가져옴
+        player_scr = player.GetComponent<PlayerController>();
     }
 }
+
