@@ -6,21 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class GameOverPanel : MonoBehaviour
 {
-    public Text Text_GameResult; // 게임의 결과를 표시해줄 Text Ui
+    public Text Text_GameResult;
 
     public void Show()
     {
-        
-        int score = GameManager.instance.score; // ScoreText로 부터 현재 기록된 점수를 불러온다.
-        transform.gameObject.SetActive(true); // GameOver 팝업 창을 화면에 표시 시키고
-        Text_GameResult.text = "Score : " + score.ToString(); // 팝업의 점수 창에 현재 점수를 표시한다.
-        FindObjectOfType<PlayerAttack>().Stop();
-        FindObjectOfType<Bullet>().Stop();
-        FindObjectOfType<PlayerController>().Stop(); 
+        int score = GameManager.instance.score;
+        transform.gameObject.SetActive(true);
+        Text_GameResult.text = "Score : " + score.ToString();
     }
 
-    public void OnClick_Retry() // '재도전' 버튼을 클릭하며 호출 되어질 함수
+    public void OnClick_Retry()
     {
         SceneManager.LoadScene("MainScene");
     }
 }
+

@@ -44,7 +44,6 @@ public class GameManager : MonoBehaviour
 
         if (score >= 7000)
         {
-            Stop();
             SceneManager.LoadScene("ClearScene");
         }
     }
