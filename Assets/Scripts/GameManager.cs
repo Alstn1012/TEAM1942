@@ -34,18 +34,21 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (!isGameEnd)
+        if (!GameManager.isGameEnd)
         {
             scoreText.text = "SCORE : " + GameManager.instance.score.ToString();
             curSpawnDelay += Time.deltaTime;
 
             if (curSpawnDelay > maxSpawnDelay)
             {
-            
                 SpawnEnemy();
                 maxSpawnDelay = Random.Range(0.5f, 1f);
                 curSpawnDelay = 0;
             }
+        }
+        else
+        {
+            Destroy(gameObject);
         }
 
         if (score >= 7000)

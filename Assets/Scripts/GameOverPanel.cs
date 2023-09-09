@@ -22,6 +22,7 @@ public class GameOverPanel : MonoBehaviour
     public void OnClick_Retry()
     {
         SceneManager.LoadScene("MainScene");
+        GameManager.isGameEnd = false;
     }
 }
 

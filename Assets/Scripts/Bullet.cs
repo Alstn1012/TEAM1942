@@ -11,8 +11,6 @@ public class Bullet : MonoBehaviour
 
     private Vector3 initialPosition;
 
-    public GameOverPanel show;
-
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();

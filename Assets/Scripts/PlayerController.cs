@@ -21,7 +21,15 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Move();
+        if (!GameManager.isGameEnd)
+        {
+            Move();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
     }
 
     void Move()
