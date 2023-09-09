@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HPManager : MonoBehaviour
 {
@@ -19,6 +20,15 @@ public class HPManager : MonoBehaviour
         Debug.Log(hearts.Length);
         
     }
+
+    public void Update()
+    {
+        if (currentHP <= 0)
+        {
+            SceneManager.LoadScene("GameOverScene");
+        }
+    }
+
 
     public void TakeDamage(int damageAmount)
     {
