@@ -13,7 +13,11 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
-        Attack();
+        if (!GameManager.isGameEnd)
+        {
+            Attack();
+        }
+        
     }
 
     void Attack()
@@ -27,10 +31,5 @@ public class PlayerAttack : MonoBehaviour
             }
         }
         curtime -= Time.deltaTime;
-    }
-
-    public void Stop()
-    {
-        StopAllCoroutines();
     }
 }

@@ -8,8 +8,12 @@ public class GameOverPanel : MonoBehaviour
 {
     public Text Text_GameResult;
 
+    
+
     public void Show()
     {
+
+        GameManager.isGameEnd = true;
         int score = GameManager.instance.score;
         transform.gameObject.SetActive(true);
         Text_GameResult.text = "Score : " + score.ToString();

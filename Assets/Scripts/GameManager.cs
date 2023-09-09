@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
 
     public Text scoreText;
 
+    public static bool isGameEnd = false;
+
     private void Start()
     {
         instance = this;
@@ -32,14 +34,18 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        scoreText.text = "SCORE : " + GameManager.instance.score.ToString();
-        curSpawnDelay += Time.deltaTime;
-
-        if (curSpawnDelay > maxSpawnDelay)
+        if (!isGameEnd)
         {
-            SpawnEnemy();
-            maxSpawnDelay = Random.Range(0.5f, 1f);
-            curSpawnDelay = 0;
+            scoreText.text = "SCORE : " + GameManager.instance.score.ToString();
+            curSpawnDelay += Time.deltaTime;
+
+            if (curSpawnDelay > maxSpawnDelay)
+            {
+            
+                SpawnEnemy();
+                maxSpawnDelay = Random.Range(0.5f, 1f);
+                curSpawnDelay = 0;
+            }
         }
 
         if (score >= 7000)
@@ -60,10 +66,5 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         player_scr = player.GetComponent<PlayerController>();//플레이어 스크립트 가져옴
-    }
-
-    public void Stop()
-    {
-        StopAllCoroutines();
     }
 }

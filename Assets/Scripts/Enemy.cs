@@ -25,8 +25,11 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        Move();
-        FacePlayer();
+        if (!GameManager.isGameEnd)
+        { 
+            Move();
+            FacePlayer();
+        }
     }
 
     void Move()

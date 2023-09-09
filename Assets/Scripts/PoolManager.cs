@@ -43,7 +43,6 @@ public class PoolManager : MonoBehaviour
                 thisPool.rotation = spawnRot;
                 return;
             }
-            
         }
     }
 }
