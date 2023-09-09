@@ -25,8 +25,6 @@ public class GameManager : MonoBehaviour
 
     public Text scoreText;
 
-
-
     private void Start()
     {
         instance = this;
@@ -43,19 +41,7 @@ public class GameManager : MonoBehaviour
             maxSpawnDelay = Random.Range(0.5f, 1f);
             curSpawnDelay = 0;
         }
-
-        if (score >= 4000)
-        {
-            ClearScene();
-        }
     }
-
-    void ClearScene()
-    {
-        SceneManager.LoadScene("ClearScene");
-    }
-
-    
 
     void SpawnEnemy()
     {
@@ -69,5 +55,10 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         player_scr = player.GetComponent<PlayerController>();//플레이어 스크립트 가져옴
+    }
+
+    public void Stop()
+    {
+        StopAllCoroutines();
     }
 }

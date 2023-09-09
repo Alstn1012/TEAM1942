@@ -12,7 +12,9 @@ public class HPManager : MonoBehaviour
 
     public Text hpText; // 화면에 표시할 텍스트
     public GameObject[] hearts; // Heart 오브젝트 배열
-    
+
+    public GameOverPanel gameOver;
+
     public void Start()
     {
         currentHP = maxHP;
@@ -25,7 +27,7 @@ public class HPManager : MonoBehaviour
     {
         if (currentHP <= 0)
         {
-            SceneManager.LoadScene("GameOverScene");
+            gameOver.GetComponent<GameOverPanel>().Show();
         }
     }
 

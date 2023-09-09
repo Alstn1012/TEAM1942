@@ -60,4 +60,9 @@ public class Bullet : MonoBehaviour
             gameManager.score += 100;
         }
     }
+
+    public void Stop()
+    {
+        StopAllCoroutines();
+    }
 }

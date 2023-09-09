@@ -28,4 +28,9 @@ public class PlayerAttack : MonoBehaviour
         }
         curtime -= Time.deltaTime;
     }
+
+    public void Stop()
+    {
+        StopAllCoroutines();
+    }
 }
