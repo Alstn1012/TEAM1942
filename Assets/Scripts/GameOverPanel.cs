@@ -7,10 +7,6 @@ using UnityEngine.SceneManagement;
 public class GameOverPanel : MonoBehaviour
 {
     public Text Text_GameResult; // 게임의 결과를 표시해줄 Text Ui
-    private void Awake()
-    {
-        transform.gameObject.SetActive(false); // 게임이 시작되면 GameOver 팝업 창을 보이지 않도록 한다.
-    }
 
     public void Show()
     {

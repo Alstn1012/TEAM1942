@@ -41,6 +41,12 @@ public class GameManager : MonoBehaviour
             maxSpawnDelay = Random.Range(0.5f, 1f);
             curSpawnDelay = 0;
         }
+
+        if (score >= 7000)
+        {
+            Stop();
+            SceneManager.LoadScene("ClearScene");
+        }
     }
 
     void SpawnEnemy()
