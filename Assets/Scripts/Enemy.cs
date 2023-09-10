@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
 {
     public PlayerController Player;
 
+
     public HPManager HPManager;
 
 
@@ -35,7 +36,7 @@ public class Enemy : MonoBehaviour
     void Move()
     {
         Vector3 dir = (pl.transform.position - transform.position).normalized;
-        rigid.velocity = dir * speed;
+        rigid.velocity = dir * speed* GameManager.enemy_speed;
     }
 
     void FacePlayer()

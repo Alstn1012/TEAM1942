@@ -2048,9 +2048,12 @@ MonoBehaviour:
   - {fileID: 2123468355}
   - {fileID: 362989622}
   - {fileID: 1120783856}
-  maxSpawnDelay: 0
+  maxSpawnDelay: 2
+  minSpawnDelay: 0.5
+  SpawnDelay_sub_persec: 0.1
   curSpawnDelay: 0
   score: 0
+  enemy_speed_add_persec: 0.05
 --- !u!4 &1300957232
 Transform:
   m_ObjectHideFlags: 0

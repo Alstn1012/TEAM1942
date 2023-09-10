@@ -17,11 +17,18 @@ public class GameManager : MonoBehaviour
     public Transform[] spawnPoints;
 
     public float maxSpawnDelay;
+    public float minSpawnDelay;
+    public float SpawnDelay_sub_persec;
+
     public float curSpawnDelay;
 
     public int score = 0;
 
+
     public static bool isGameEnd = false;
+
+    public float enemy_speed_add_persec;
+    public static float enemy_speed = 1;
 
     private void Start()
     {
@@ -30,6 +37,9 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        enemy_speed += Time.deltaTime* enemy_speed_add_persec;
+        maxSpawnDelay -= Time.deltaTime * SpawnDelay_sub_persec;
+        maxSpawnDelay = Mathf.Max(maxSpawnDelay, minSpawnDelay);
         if (!GameManager.isGameEnd)
         {
             curSpawnDelay += Time.deltaTime;
@@ -37,7 +47,6 @@ public class GameManager : MonoBehaviour
             if (curSpawnDelay > maxSpawnDelay)
             {
                 SpawnEnemy();
-                maxSpawnDelay = Random.Range(0.5f, 1f);
                 curSpawnDelay = 0;
             }
         }

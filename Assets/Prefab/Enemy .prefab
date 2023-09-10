@@ -173,4 +173,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   HPManager: {fileID: 0}
-  speed: 6
+  speed: 3
