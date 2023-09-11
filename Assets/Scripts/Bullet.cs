@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor.Search;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class Bullet : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Bullet : MonoBehaviour
     public GameManager gameManager;
 
     private Vector3 initialPosition;
+
 
     private void Start()
     {
@@ -59,6 +61,16 @@ public class Bullet : MonoBehaviour
             collision.GetComponent<Enemy>().gameObject.SetActive(false);
             this.gameObject.SetActive(false);
             gameManager.score += 100;
+        }
+
+        if (collision.CompareTag("Planet"))
+        {
+            Vector3 vd = this.transform.up- new Vector3(0,0,0);
+            float dum = Quaternion.FromToRotation(Vector3.up, vd).eulerAngles.z;
+            vd = collision.transform.position-this.transform.position;
+            float dum2 = Quaternion.FromToRotation(Vector3.up, vd).eulerAngles.z;
+            float dum3 = (dum - dum2) * -1 + dum2-90;
+            transform.up = new Vector3(Mathf.Cos(Mathf.Deg2Rad * dum3), Mathf.Sin(dum3 * Mathf.Deg2Rad),0).normalized;
         }
     }
 }
