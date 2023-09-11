@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (score >= 4000)
+        if (score >= 6000)
         {
             SceneManager.LoadScene("ClearScene");
         }
