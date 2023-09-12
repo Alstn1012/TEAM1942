@@ -53,9 +53,10 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            enemy_speed = 3f;
         }
 
-        if (score >= 6000)
+        if (score >= 4000)
         {
             SceneManager.LoadScene("ClearScene");
         }

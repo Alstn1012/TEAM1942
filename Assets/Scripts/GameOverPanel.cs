@@ -9,6 +9,8 @@ public class GameOverPanel : MonoBehaviour
     public Text Text_GameResult;
     public Text Text_GameMaxResult;
 
+    public GameObject planet;
+
     private string KeyName = "bestScore";
     public int highScore = 0;
 
@@ -19,6 +21,15 @@ public class GameOverPanel : MonoBehaviour
 
     public void Show()
     {
+
+        GameObject[] planet = GameObject.FindGameObjectsWithTag("Planet");
+        
+        foreach (GameObject obj in planet)
+        {
+            Destroy(obj);
+        }
+        
+
         GameManager.isGameEnd = true;
         int score = GameManager.instance.score;
         transform.gameObject.SetActive(true);
