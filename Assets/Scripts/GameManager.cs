@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        enemy_speed += Time.deltaTime* enemy_speed_add_persec;
+        enemy_speed += Time.deltaTime * enemy_speed_add_persec;
         maxSpawnDelay -= Time.deltaTime * SpawnDelay_sub_persec;
         maxSpawnDelay = Mathf.Max(maxSpawnDelay, minSpawnDelay);
         if (!GameManager.isGameEnd)
