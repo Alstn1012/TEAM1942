@@ -10,7 +10,7 @@ public class StartScenePlane : MonoBehaviour
 
     float currentPosition; //현재 위치(x) 저장
 
-    float direction = 8.0f; //이동속도+방향
+    public float direction = 8.0f; //이동속도+방향
 
     void Start()
     {
@@ -30,6 +30,8 @@ public class StartScenePlane : MonoBehaviour
             direction *= -1;
 
             currentPosition = rightMax;
+            transform.position = new Vector3 (currentPosition, Random.RandomRange(-5,5), 0);
+            direction = Random.RandomRange(4, 8)*-1;
 
         }
 
@@ -44,6 +46,8 @@ public class StartScenePlane : MonoBehaviour
             direction *= -1;
 
             currentPosition = leftMax;
+            transform.position = new Vector3(currentPosition, Random.RandomRange(-5, 5), 0);
+            direction = Random.RandomRange(4, 8) * 1;
 
         }
 
@@ -51,7 +55,7 @@ public class StartScenePlane : MonoBehaviour
 
         //이동속도+방향에 -1을 곱해 반전을 해주고 현재위치를 좌로 이동가능한 (x)최대값으로 설정
 
-        transform.position = new Vector3(currentPosition, 0, 0);
+        transform.position = new Vector3(currentPosition, transform.position.y, 0);
 
         //"Stone"의 위치를 계산된 현재위치로 처리
 
