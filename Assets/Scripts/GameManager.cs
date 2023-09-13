@@ -52,8 +52,9 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            enemy_speed = 1f;
             Destroy(gameObject);
-            enemy_speed = 3f;
+            
         }
 
         if (score >= 4000)
