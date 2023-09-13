@@ -2498,7 +2498,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Text_GameResult: {fileID: 939804039}
   Text_GameMaxResult: {fileID: 1765617142}
-  planet: {fileID: 0}
   highScore: 1
 --- !u!114 &696594139
 MonoBehaviour:
