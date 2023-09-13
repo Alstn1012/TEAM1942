@@ -9,7 +9,7 @@ public class GameOverPanel : MonoBehaviour
     public Text Text_GameResult;
     public Text Text_GameMaxResult;
 
-    public GameObject planet;
+    private GameObject planet;
 
     private string KeyName = "bestScore";
     public int highScore = 0;
