@@ -30,17 +30,17 @@ public class GameOverPanel : MonoBehaviour
         }
         
 
-        GameManager.isGameEnd = true;
-        int score = GameManager.instance.score;
+        GameManager.IsGameEnd = true;
+        int score = GameManager.Instance.score;
         transform.gameObject.SetActive(true);
 
-        // √÷∞Ì ¡°ºˆ ∫“∑Øø¿±‚
+        // ÏµúÍ≥† Ï†êÏàò Î∂àÎü¨Ïò§Í∏∞
         highScore = PlayerPrefs.GetInt(KeyName, 0);
 
         if (score > highScore)
         {
             PlayerPrefs.SetInt(KeyName, score);
-            highScore = score; // √÷∞Ì ¡°ºˆ ∞ªΩ≈
+            highScore = score; // ÏµúÍ≥† Ï†êÏàò Í∞±Ïã†
         }
 
         Text_GameResult.text = "SCORE : " + score.ToString();
@@ -50,7 +50,7 @@ public class GameOverPanel : MonoBehaviour
     public void OnClick_Retry()
     {
         SceneManager.LoadScene("MainScene");
-        GameManager.isGameEnd = false;
+        GameManager.IsGameEnd = false;
     }
 
     public void Exit()

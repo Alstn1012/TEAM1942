@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public PlayerController player;
 
 
-    [Header("Player ¼¼ÆÃ")]
+    [Header("Player ì„¸íŒ…")]
 
     Rigidbody2D rigid;
 
@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (!GameManager.isGameEnd)
+        if (!GameManager.IsGameEnd)
         {
             Move();
         }

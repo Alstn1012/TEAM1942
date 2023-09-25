@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -9,38 +10,38 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public GameObject[] enemyObjs;
 
-    PlayerController player_scr;
-
+    private PlayerController _playerScr;
+    
     public PoolManager poolManager;
-    public static GameManager instance;
+    public static GameManager Instance;
 
     public Transform[] spawnPoints;
 
     public float maxSpawnDelay;
     public float minSpawnDelay;
-    public float SpawnDelay_sub_persec;
+    [FormerlySerializedAs("SpawnDelay_sub_parsec")] public float spawnDelaySubPersec;
 
     public float curSpawnDelay;
 
     public int score = 0;
 
 
-    public static bool isGameEnd = false;
+    public static bool IsGameEnd = false;
 
-    public float enemy_speed_add_persec;
-    public static float enemy_speed = 1;
+    [FormerlySerializedAs("enemy_speed_add_persec")] public float enemySpeedAddPersec;
+    public static float EnemySpeed = 1;
 
     private void Start()
     {
-        instance = this;
+        Instance = this;
     }
 
     void Update()
     {
-        enemy_speed += Time.deltaTime * enemy_speed_add_persec;
-        maxSpawnDelay -= Time.deltaTime * SpawnDelay_sub_persec;
+        EnemySpeed += Time.deltaTime * enemySpeedAddPersec;
+        maxSpawnDelay -= Time.deltaTime * spawnDelaySubPersec;
         maxSpawnDelay = Mathf.Max(maxSpawnDelay, minSpawnDelay);
-        if (!GameManager.isGameEnd)
+        if (!GameManager.IsGameEnd)
         {
             curSpawnDelay += Time.deltaTime;
 
@@ -52,7 +53,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            enemy_speed = 1f;
+            EnemySpeed = 1f;
             Destroy(gameObject);
             
         }
@@ -72,8 +73,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
-        player_scr = player.GetComponent<PlayerController>();
+        Instance = this;
+        _playerScr = player.GetComponent<PlayerController>();
     }
 }
 

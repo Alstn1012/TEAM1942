@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        if (!GameManager.isGameEnd)
+        if (!GameManager.IsGameEnd)
         { 
             Move();
             FacePlayer();
@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
     void Move()
     {
         Vector3 dir = new Vector3(Mathf.Cos(Mathf.Deg2Rad * (pang)), Mathf.Sin((pang) * Mathf.Deg2Rad), 0).normalized;
-        rigid.velocity = dir * speed* GameManager.enemy_speed* speed2;
+        rigid.velocity = dir * speed* GameManager.EnemySpeed* speed2;
 
 
     }

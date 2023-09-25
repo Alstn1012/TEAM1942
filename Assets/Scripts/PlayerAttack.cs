@@ -13,7 +13,7 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
-        if (!GameManager.isGameEnd)
+        if (!GameManager.IsGameEnd)
         {
             Attack();
         }
