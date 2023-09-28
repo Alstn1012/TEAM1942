@@ -7,11 +7,11 @@ using UnityEngine.SceneManagement;
 
 public class HPManager : MonoBehaviour
 {
-    public int maxHP = 3; // ÃÖ´ë Ã¼·Â
-    public int currentHP; // ÇöÀç Ã¼·Â
+    public int maxHP = 3; // ìµœëŒ€ ì²´ë ¥
+    public int currentHP; // í˜„ì¬ ì²´ë ¥
 
-    public Text hpText; // È­¸é¿¡ Ç¥½ÃÇÒ ÅØ½ºÆ®
-    public GameObject[] hearts; // Heart ¿ÀºêÁ§Æ® ¹è¿­
+    public Text hpText; // í™”ë©´ì— í‘œì‹œí•  í…ìŠ¤íŠ¸
+    public GameObject[] hearts; // Heart ì˜¤ë¸Œì íŠ¸ ë°°ì—´
 
     public GameOverPanel gameOver;
 
@@ -42,7 +42,7 @@ public class HPManager : MonoBehaviour
         { 
             hearts[i].SetActive(false);
         }
-        // HP°¡ °¨¼ÒÇÒ ¶§¸¶´Ù Heart ¿ÀºêÁ§Æ®¸¦ ¼û±è
+        // HPê°€ ê°ì†Œí•  ë•Œë§ˆë‹¤ Heart ì˜¤ë¸Œì íŠ¸ë¥¼ ìˆ¨ê¹€
         for (int i = 0; i < currentHP; i++)
         {
             hearts[i].SetActive(false);
